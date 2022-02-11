@@ -1,0 +1,21 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+# This workflow will initiate a Veracode Static Analysis Pipeline scan, return a results.json and convert to SARIF for upload as a code scanning alert
+
+on:
+  push:
+    branches:
+    - main
+    - release/*
+    
+  pull_request:
+    branches:
+    - main
+    
+jobs:
+  my_job:
+    name: deploy to staging
+    runs-on: ubuntu-18.04
